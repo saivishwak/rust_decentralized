@@ -1,0 +1,31 @@
+[package]
+name = "bitfab"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+colored = { version = "2" }
+clap = { version = "3.2.17" ,features = ['derive'] }
+http_core = { version = "0.1.0" }
+p2p = { version = "0.1.0" }
+tokio = { version = "1.20.1", features = ["full"] }
+hyper = { version = "0.14", features = ["full", "server"] }
+router = {path = "./core/net/router"}
+bitfab_utils = {path = "./core/bitfab_utils"}
+uuid = { version = "1.1.2", features = ["v4"]}
+rand = "0.8"
+
+[workspace]
+members = [
+    "core/net/http_core",
+    "core/net/router",
+    "core/net/p2p",
+    "core/bitfab_utils"
+]
+
+[patch.crates-io]
+http_core = { path = "./core/net/http_core" }
+p2p = { path = "./core/net/p2p" }
+bitfab_utils = {path = "./core/bitfab_utils"}

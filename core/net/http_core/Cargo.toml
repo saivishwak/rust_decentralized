@@ -1,0 +1,13 @@
+[package]
+name = "http_core"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1.20.1", features = ["full"] }
+hyper = { version = "0.14", features = ["full", "server"] }
+http = "0.2.8"
+router = {path = "../router"}
+bitfab_utils = {path = "../../bitfab_utils"}

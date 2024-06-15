@@ -1,0 +1,13 @@
+[package]
+name = "router"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+http = "0.2.8"
+tokio = { version = "1.20.1", features = ["full"] }
+route-recognizer = "0.3.1"
+hyper = { version = "0.14", features = ["full", "server"] }
+bitfab_utils = {path = "../../bitfab_utils"}
